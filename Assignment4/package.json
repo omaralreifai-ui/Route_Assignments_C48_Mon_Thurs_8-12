@@ -1,0 +1,12 @@
+{
+  "main": "./src/Part3/main.js",
+  "scripts": {
+    "dev": "node --watch ./src/Part3/main.js",
+    "start": "node --watch .",
+    "migrate": "psql -U postgres -d mydatabase -f src/Part3/migrations/product.sql"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "pg": "^8.23.0"
+  }
+}
