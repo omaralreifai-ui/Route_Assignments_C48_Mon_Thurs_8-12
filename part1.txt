@@ -1,0 +1,36 @@
+Table musician {
+  id integer [primary key]
+  name varchar
+  street varchar
+  city varchar
+  phone varchar
+}
+Table instrument {
+  name varchar [primary key]
+  musical_key varchar
+}
+Table album {
+  id integer [primary key]
+  title varchar
+  copy_right datetime
+  producer_id integer
+}
+Table song {
+  title varchar [primary key]
+  author varchar
+  album_id varchar
+}
+Table plays {
+  musician_id integer
+  instrument_name varchar
+}
+Table performs {
+  musician_id integer
+  song_title varchar
+}
+Ref: album.producer_id > musician.id
+Ref: song.album_id > album.title
+Ref: plays.musician_id > musician.id
+Ref: plays.instrument_name > instrument.name
+Ref: performs.musician_id > musician.id
+Ref: performs.song_title > song.title
