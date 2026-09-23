@@ -15,11 +15,6 @@ app.use(express.json())
 app.use('/auth' ,authRouter);
 app.use('/user' ,userRoute)
 app.use('/message' ,messageRoute)
-otp.create({
-    code :'123456' ,
-    email :'omara@gmail.com' ,
-    expiresAt : Date.now() + 30 *10000
-}); 
 app.listen(3000 , () =>
     console.log('server start') 
 )
